@@ -5,6 +5,14 @@ $stateProvider
       url: '/dashboard',
       templateUrl: 'views/dashboard/dashboard.html'
     })
+    .state('settings', {
+      url: '/settings',
+      templateUrl: 'views/settings/settings.html'
+    })
+    .state('ask', {
+      url: '/ask',
+      templateUrl: 'views/ask/ask.html'
+    })
     ;
 $urlRouterProvider.otherwise("/dashboard");
 })

@@ -32,7 +32,7 @@ swipe-card {
   left: 50%;
   top: 50%;
   width: 300px;
-  height: 300px;
+  height: 340px;
   margin-left: -150px;
   margin-top: -150px;
   box-sizing: border-box;
@@ -43,7 +43,7 @@ swipe-card {
 }
 
 swipe-card .title {
-  height: 40px;
+  height: 80px;
   padding: 5px;
   line-height: 30px;
   color: #444;

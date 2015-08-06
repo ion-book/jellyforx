@@ -1,7 +1,13 @@
 <ion-view>
   <ion-pane ng-controller="CardsCtrl">
-  <ion-header-bar class="bar-transparent">
-      <h1 class="title">Help Out</h1>
+  <ion-header-bar ng-controller="MyPop" class="bar-transparent">
+    <div class="buttons">
+          <button ng-click="openPopover($event)" class="button button-icon ion-person"></button>
+        </div>
+      <h1 class="title">Can you help?</h1>
+      <div class="buttons">
+            <a href="#/ask" class="button button-icon ion-android-create"></a>
+          </div>
     </ion-header-bar>
 
   <swipe-cards>
@@ -18,6 +24,7 @@
         </div>
         <div class="button-bar">
           <button class="button button-clear button-positive" ng-click="goAway()">Answer</button>
+          <button class="button button-clear button-positive" ng-click="goAway()">Forward</button>
           <button class="button button-clear button-positive" ng-click="goAway()">Decline</button>
         </div>
       </div>
@@ -25,3 +32,108 @@
   </swipe-cards>
 </ion-pane>
 </ion-view>
+<script id="my-popover.html" type="text/ng-template">
+<style>
+.popover{ height:90%; width: 95%;
+}
+.ionmargin{padding-top:100px;}
+</style>
+  <ion-popover-view>
+    <ion-header-bar class="bar-dark">
+    <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-tabs class="tabs-top tabs-dark">
+              <ion-tab title="Questions" ui-sref="eventmenu.home.tab1">
+                <ion-nav-view name="tab1" class="ionmargin" style="">
+                <div class="list">
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic.png">
+                <h2>Question 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic2.png">
+                <h2>Question 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic3.png">
+                <h2>Question 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              </div>
+                </ion-nav-view>
+              </ion-tab>
+              <ion-tab title="Answers" ui-sref="eventmenu.home.tab2">
+                <ion-nav-view name="tab2" class="ionmargin">
+                <div class="list">
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic4.png">
+                <h2>Answer 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic.png">
+                <h2>Answer 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              <a class="item item-thumbnail-right" href="#">
+                <img src="img/pic2.png">
+                <h2>Answer 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+              </a>
+              </div>
+                </ion-nav-view>
+              </ion-tab>
+              <ion-tab title="Thanks" ui-sref="eventmenu.home.tab3">
+              <ion-nav-view name="tab3" class="ionmargin">
+              <div class="list">
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic4.png">
+              <h2>Thanks 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic.png">
+              <h2>Thanks 2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic2.png">
+              <h2>Thanks 3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            </div>
+            </ion-nav-view>
+              </ion-tab>
+              <ion-tab title="Replies" ui-sref="eventmenu.home.tab4">
+              <ion-nav-view name="tab3" class="ionmargin">
+              <div class="list">
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic4.png">
+              <h2>Replies 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic.png">
+              <h2>Replies 2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            <a class="item item-thumbnail-right" href="#">
+              <img src="img/pic2.png">
+              <h2>Replies 3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut mauris lacus. Nunc et fermentum odio. Nulla facilisi. Nunc hendrerit ipsum sit amet sapien maximus, quis tristique lorem cursus. Nam massa magna, tempor in neque quis, malesuada mattis nibh. Curabitur tempus velit porttitor nisl vestibulum commodo. Fusce vel nisl arcu. Aliquam efficitur quam ut leo condimentum, eu pharetra ligula blandit.</p>
+            </a>
+            </div>
+            </ion-nav-view>
+              </ion-tab>
+            </ion-tabs>
+    <ion-footer-bar align-title="left" class="bar-dark">
+  <h1 class="title">Settings</h1>
+  <div class="buttons">
+    <a ng-click="goSettings()" class="button icon ion-gear-b"></a>
+  </div>
+</ion-footer-bar>
+
+  </ion-popover-view>
+</script>
